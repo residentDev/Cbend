@@ -31,8 +31,7 @@ namespace Cbend_V2
         //get list of users accounts on each load
         private void AccountsList_Load(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             SqlCommand command = new SqlCommand(
               "select name from Accounts",
               sqlcon);
@@ -58,6 +57,12 @@ namespace Cbend_V2
             MainForm.Instance.PnlContainer.Controls.Clear();
             String Clientname = (sender as Button).Text;
             MainForm.Instance.PnlContainer.Controls.Add(new ClientLogin(Clientname));
+        }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
         }
 
 

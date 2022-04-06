@@ -21,28 +21,12 @@ namespace Cbend_V2
 
         private void AdminDashBoard_Load(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
-            SqlCommand command = new SqlCommand(
-              "select name from Accounts",
-              sqlcon);
-            sqlcon.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                Button ClientBtn = new Button();
-                ClientBtn.Text = reader.GetString(0);
-                AccountsListPanel.Controls.Add(ClientBtn);
-                ClientBtn.Click += ClientBtn_Click;
-            }
-            reader.Close();
-            sqlcon.Close();
+            LoadAccountsList();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             if(name != "admin")
             {
                 SqlCommand command = new SqlCommand("delete from Accounts where name = @name", sqlcon);
@@ -51,6 +35,8 @@ namespace Cbend_V2
                 command.ExecuteNonQuery();
                 sqlcon.Close();
                 MessageBox.Show("operation successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AccountsListPanel.Controls.Clear();
+                LoadAccountsList();
             }
             else
             {
@@ -75,6 +61,36 @@ namespace Cbend_V2
             MainForm.Instance.PnlContainer.Controls.Clear();
             MainForm.Instance.PnlContainer.Controls.Add(new EditClientInfo(name));
 
+        }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.PnlContainer.Controls.Clear();
+            MainForm.Instance.PnlContainer.Controls.Add(new AccountsList());
+        }
+        public void LoadAccountsList()
+        {
+            SqlConnection sqlcon = GetSqlConnection();
+            SqlCommand command = new SqlCommand(
+              "select name from Accounts",
+              sqlcon);
+            sqlcon.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Button ClientBtn = new Button();
+                ClientBtn.Text = reader.GetString(0);
+                AccountsListPanel.Controls.Add(ClientBtn);
+                ClientBtn.Click += ClientBtn_Click;
+            }
+            reader.Close();
+            sqlcon.Close();
         }
     }
 }

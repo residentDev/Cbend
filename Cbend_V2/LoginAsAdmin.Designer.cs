@@ -1,6 +1,6 @@
 ﻿namespace Cbend_V2
 {
-    partial class ClientLogin
+    partial class LoginAsAdmin
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,61 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PasswdTxtBox = new System.Windows.Forms.TextBox();
+            this.PasswdTextBox = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // PasswdTxtBox
+            // PasswdTextBox
             // 
-            this.PasswdTxtBox.Location = new System.Drawing.Point(93, 122);
-            this.PasswdTxtBox.Name = "PasswdTxtBox";
-            this.PasswdTxtBox.Size = new System.Drawing.Size(147, 20);
-            this.PasswdTxtBox.TabIndex = 0;
-            this.PasswdTxtBox.UseSystemPasswordChar = true;
-            this.PasswdTxtBox.TextChanged += new System.EventHandler(this.PasswdTxtBox_TextChanged);
+            this.PasswdTextBox.Location = new System.Drawing.Point(94, 100);
+            this.PasswdTextBox.MaxLength = 10;
+            this.PasswdTextBox.Name = "PasswdTextBox";
+            this.PasswdTextBox.Size = new System.Drawing.Size(138, 20);
+            this.PasswdTextBox.TabIndex = 0;
+            this.PasswdTextBox.UseSystemPasswordChar = true;
             // 
             // LoginBtn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(119, 178);
+            this.LoginBtn.Location = new System.Drawing.Point(125, 168);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(75, 23);
             this.LoginBtn.TabIndex = 1;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = true;
-            this.LoginBtn.Visible = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Password";
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(21, 35);
+            this.BackBtn.Location = new System.Drawing.Point(15, 15);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 23);
-            this.BackBtn.TabIndex = 3;
+            this.BackBtn.TabIndex = 2;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
-            // ClientLogin
+            // LoginAsAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BackBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginBtn);
-            this.Controls.Add(this.PasswdTxtBox);
-            this.Name = "ClientLogin";
-            this.Size = new System.Drawing.Size(327, 270);
+            this.Controls.Add(this.PasswdTextBox);
+            this.Name = "LoginAsAdmin";
+            this.Size = new System.Drawing.Size(348, 280);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,9 +78,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox PasswdTxtBox;
+        private System.Windows.Forms.TextBox PasswdTextBox;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BackBtn;
     }
 }

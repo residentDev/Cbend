@@ -22,8 +22,7 @@ namespace Cbend_V2
 
         private void EditClientInfo_Load(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             if (name != "admin")
             {
                 CreditLb.Visible = true;
@@ -39,7 +38,7 @@ namespace Cbend_V2
 
                     NameTxtBox.Text = reader.GetString(0);
                     PasswordTxtBox.Text = reader.GetString(1);
-                    CreditTxtBox.Text = reader.GetString(2);
+                    CreditTxtBox.Text = reader.GetInt32(2).ToString();
 
                 }
                 reader.Close();
@@ -68,8 +67,7 @@ namespace Cbend_V2
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             if(name != "admin")
             {
                 string query = "update Accounts set name = @name, password = @password, credit = @credit  where name = @Oldname";
@@ -79,7 +77,15 @@ namespace Cbend_V2
                 cmd.Parameters.AddWithValue("@name", NameTxtBox.Text);
                 cmd.Parameters.AddWithValue("@password", PasswordTxtBox.Text);
                 cmd.Parameters.AddWithValue("@credit", CreditTxtBox.Text);
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("non valid credit");
+                }
+                
                 sqlcon.Close();
                 MessageBox.Show("Record Updated Successfully");
             }
@@ -96,6 +102,18 @@ namespace Cbend_V2
                 MessageBox.Show("Record Updated Successfully");
             }
             
+        }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.PnlContainer.Controls.Clear();
+            MainForm.Instance.PnlContainer.Controls.Add(new AccountsList());
         }
     }
 }

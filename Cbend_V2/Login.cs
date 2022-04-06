@@ -20,8 +20,7 @@ namespace Cbend_V2
         //Set the admin password
         private void SignInBtn_Click(object sender, EventArgs e)
         {
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             string query = "update Accounts set password = @password  where id = 1";
             sqlcon.Open();
             SqlCommand cmd = new SqlCommand(query, sqlcon);
@@ -33,6 +32,12 @@ namespace Cbend_V2
                 MainForm.Instance.PnlContainer.Controls.Clear();
                 MainForm.Instance.PnlContainer.Controls.Add(new AccountsList());
             }
+        }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
         }
     }
 }

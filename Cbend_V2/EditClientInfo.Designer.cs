@@ -35,11 +35,13 @@
             this.PasswdLb = new System.Windows.Forms.Label();
             this.CreditLb = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NameTxtBox
             // 
             this.NameTxtBox.Location = new System.Drawing.Point(128, 50);
+            this.NameTxtBox.MaxLength = 10;
             this.NameTxtBox.Name = "NameTxtBox";
             this.NameTxtBox.Size = new System.Drawing.Size(114, 20);
             this.NameTxtBox.TabIndex = 0;
@@ -47,6 +49,7 @@
             // PasswordTxtBox
             // 
             this.PasswordTxtBox.Location = new System.Drawing.Point(128, 95);
+            this.PasswordTxtBox.MaxLength = 10;
             this.PasswordTxtBox.Name = "PasswordTxtBox";
             this.PasswordTxtBox.Size = new System.Drawing.Size(114, 20);
             this.PasswordTxtBox.TabIndex = 1;
@@ -54,6 +57,7 @@
             // CreditTxtBox
             // 
             this.CreditTxtBox.Location = new System.Drawing.Point(128, 141);
+            this.CreditTxtBox.MaxLength = 8;
             this.CreditTxtBox.Name = "CreditTxtBox";
             this.CreditTxtBox.Size = new System.Drawing.Size(114, 20);
             this.CreditTxtBox.TabIndex = 2;
@@ -97,10 +101,21 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
+            // BackBtn
+            // 
+            this.BackBtn.Location = new System.Drawing.Point(16, 3);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(75, 23);
+            this.BackBtn.TabIndex = 7;
+            this.BackBtn.Text = "Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
             // EditClientInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.CreditLb);
             this.Controls.Add(this.PasswdLb);
@@ -125,5 +140,6 @@
         private System.Windows.Forms.Label PasswdLb;
         private System.Windows.Forms.Label CreditLb;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button BackBtn;
     }
 }

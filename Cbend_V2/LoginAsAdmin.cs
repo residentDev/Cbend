@@ -11,22 +11,21 @@ using System.Data.SqlClient;
 
 namespace Cbend_V2
 {
-    public partial class ClientLogin : UserControl
+    public partial class LoginAsAdmin : UserControl
     {
-        String Clientname;
-        public ClientLogin(String Clientname)
+        String ClientName;
+        int credit;
+        public LoginAsAdmin(String ClientName, int credit)
         {
             InitializeComponent();
-            this.Clientname = Clientname;
+            this.ClientName = ClientName;
+            this.credit = credit;
         }
 
-   
-
-        //check if user in db
-        //load user dashboard
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string query = "select name, password, credit from Accounts where password = '" + PasswdTxtBox.Text + "' and name = '"+Clientname+"'";
+            //check if the password match admin password
+            string query = "select password from Accounts where password = '" + PasswdTextBox.Text + "'";
             SqlConnection sqlcon = GetSqlConnection();
             sqlcon.Open();
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
@@ -34,29 +33,15 @@ namespace Cbend_V2
             sda.Fill(dtbl);
             if (dtbl.Rows.Count > 0)
             {
-                String name = dtbl.Rows[0].Field<String>("name");
                 MainForm.Instance.PnlContainer.Controls.Clear();
-                if(name != "admin")
-                {
-                    int credit = dtbl.Rows[0].Field<int>("credit");
-                    MainForm.Instance.PnlContainer.Controls.Add(new ClientDashboard(name, credit));
-                }
-                else
-                {
-                    MainForm.Instance.PnlContainer.Controls.Add(new AdminDashBoard());
-                }
+                MainForm.Instance.PnlContainer.Controls.Add(new AddCredits(ClientName));
                 
+              
             }
             else
             {
                 MessageBox.Show("Wrong password", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        private void PasswdTxtBox_TextChanged(object sender, EventArgs e)
-        {
-            LoginBtn.Visible = true;
         }
         public SqlConnection GetSqlConnection()
         {
@@ -64,11 +49,11 @@ namespace Cbend_V2
             SqlConnection sqlcon = new SqlConnection(sc);
             return sqlcon;
         }
-
+        //back to client dashboard
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            //MainForm.Instance.PnlContainer.Controls.Clear();
-            //MainForm.Instance.PnlContainer.Controls.Add(new AccountsList());
+            MainForm.Instance.PnlContainer.Controls.Clear();
+            MainForm.Instance.PnlContainer.Controls.Add(new ClientDashboard(ClientName, credit));
         }
     }
 }

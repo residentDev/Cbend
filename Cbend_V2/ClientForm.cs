@@ -29,8 +29,7 @@ namespace Cbend_V2
             {
                 //gets all names and passwords from Db
                 List<string> AccountList = new List<string>();
-                String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-                SqlConnection sqlcon = new SqlConnection(sc);
+                SqlConnection sqlcon = GetSqlConnection();
                 SqlCommand command = new SqlCommand(
                   "select name, password from Accounts",
                   sqlcon);
@@ -63,7 +62,7 @@ namespace Cbend_V2
                         command2.ExecuteNonQuery();
                         sqlcon.Close();
                         DialogResult result = MessageBox.Show("operation successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+
                     }
                     catch (FormatException)
                     {
@@ -75,11 +74,18 @@ namespace Cbend_V2
            
             
         }
-
         private void BackBtn_Click(object sender, EventArgs e)
         {
             MainForm.Instance.PnlContainer.Controls.Clear();
             MainForm.Instance.PnlContainer.Controls.Add(new AccountsList());
         }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
+        }
     }
-}
+
+        
+    }

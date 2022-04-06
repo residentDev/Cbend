@@ -38,8 +38,7 @@ namespace Cbend_V2
         private void MainForm_Load(object sender, EventArgs e)
         {
             _obj = this;
-            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aymen\Documents\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
-            SqlConnection sqlcon = new SqlConnection(sc);
+            SqlConnection sqlcon = GetSqlConnection();
             SqlCommand command = new SqlCommand(
               "select password from Accounts where id = 1;",
               sqlcon);
@@ -62,6 +61,12 @@ namespace Cbend_V2
                 
             }
             
+        }
+        public SqlConnection GetSqlConnection()
+        {
+            String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(sc);
+            return sqlcon;
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)

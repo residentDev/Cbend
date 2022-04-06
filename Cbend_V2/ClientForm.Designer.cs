@@ -68,6 +68,7 @@
             // UserNameTxtBox
             // 
             this.UserNameTxtBox.Location = new System.Drawing.Point(167, 69);
+            this.UserNameTxtBox.MaxLength = 10;
             this.UserNameTxtBox.Name = "UserNameTxtBox";
             this.UserNameTxtBox.Size = new System.Drawing.Size(130, 20);
             this.UserNameTxtBox.TabIndex = 3;
@@ -75,6 +76,7 @@
             // PasswdTxtBox
             // 
             this.PasswdTxtBox.Location = new System.Drawing.Point(167, 120);
+            this.PasswdTxtBox.MaxLength = 10;
             this.PasswdTxtBox.Name = "PasswdTxtBox";
             this.PasswdTxtBox.Size = new System.Drawing.Size(130, 20);
             this.PasswdTxtBox.TabIndex = 4;
@@ -83,6 +85,7 @@
             // CreditsTxtBox
             // 
             this.CreditsTxtBox.Location = new System.Drawing.Point(167, 174);
+            this.CreditsTxtBox.MaxLength = 8;
             this.CreditsTxtBox.Name = "CreditsTxtBox";
             this.CreditsTxtBox.Size = new System.Drawing.Size(130, 20);
             this.CreditsTxtBox.TabIndex = 5;
