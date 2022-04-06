@@ -1,3 +1,2 @@
 # Cbend
-to open the project
-open Cbend_V2.sln with visual studio
+Run The app by : opening Cbend_V2.sln in visual studio
