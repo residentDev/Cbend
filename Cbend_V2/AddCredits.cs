@@ -57,18 +57,14 @@ namespace Cbend_V2
 
             sqlcon.Close();
             MessageBox.Show("Record Updated Successfully");
+            MainForm.Instance.PnlContainer.Controls.Clear();
+            MainForm.Instance.PnlContainer.Controls.Add(new ClientDashboard(ClientName, NewCredit));
         }
         public SqlConnection GetSqlConnection()
         {
             String sc = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\Db.mdf;Integrated Security=True";
             SqlConnection sqlcon = new SqlConnection(sc);
             return sqlcon;
-        }
-
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            MainForm.Instance.PnlContainer.Controls.Clear();
-            MainForm.Instance.PnlContainer.Controls.Add(new AdminDashBoard());
         }
     }
 }

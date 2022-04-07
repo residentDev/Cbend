@@ -48,3 +48,5 @@ D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.exe
 D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.pdb
 D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.AddCredits.resources
 D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.LoginAsAdmin.resources
+D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.FreeStartUc.resources
+D:\WinDocs\Visual Studio 2017\Projects\Cbend_V2\Cbend_V2\obj\Debug\Cbend_V2.BlockStartUc.resources

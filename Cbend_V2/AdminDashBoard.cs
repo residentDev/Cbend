@@ -92,5 +92,12 @@ namespace Cbend_V2
             reader.Close();
             sqlcon.Close();
         }
+
+        private void CreateAccountBtn_Click(object sender, EventArgs e)
+        {
+            MainForm.Instance.PnlContainer.Controls.Clear();
+            MainForm.Instance.PnlContainer.Controls.Add(new ClientForm());
+            MainForm.Instance.PnlContainer.Show();
+        }
     }
 }

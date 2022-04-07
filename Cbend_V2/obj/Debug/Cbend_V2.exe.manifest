@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cbend_V2.exe" size="37856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cbend_V2.exe" size="41952">
       <assemblyIdentity name="Cbend_V2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AHp/1De65wkVqby02NZVtaRdPNwFRpdl8ybo+gDW2gM=</dsig:DigestValue>
+        <dsig:DigestValue>XRKqFIL6sGl5qDNEd/cEGoOn08gNylD4Ei1SJ1kzSOQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mE9aQ+upzbjryqI8YOQiO4vETcCauYSy9GY1K24yKi4=</dsig:DigestValue>
+      <dsig:DigestValue>oRa5i7XEEXk3kTu1tLNvnJ6hPH7rGYTwePe6Ib5RgHc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Db_log.ldf" size="8388608" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9aczlpadAwpUtMqWTPZBV18CLjn2nQOrUJZVKOoVVbE=</dsig:DigestValue>
+      <dsig:DigestValue>y3rt8J0DwgKxxAWwh0q0nzE2BhzFKv0V0QTvSVi09vI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -18,16 +18,6 @@ namespace Cbend_V2
         {
             InitializeComponent();
         }
-
-        
-        //load Client Form
-        private void CreateAccountBtn_Click_1(object sender, EventArgs e)
-        {
-           MainForm.Instance.PnlContainer.Controls.Clear();
-           MainForm.Instance.PnlContainer.Controls.Add(new ClientForm());
-           MainForm.Instance.PnlContainer.Show();
-        }
-
         //get list of users accounts on each load
         private void AccountsList_Load(object sender, EventArgs e)
         {

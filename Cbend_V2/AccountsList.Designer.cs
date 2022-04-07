@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TitelLB = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CreateAccountBtn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -56,23 +54,12 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.CreateAccountBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(246, 85);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 100);
             this.flowLayoutPanel1.TabIndex = 11;
             this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // CreateAccountBtn
-            // 
-            this.CreateAccountBtn.Location = new System.Drawing.Point(3, 74);
-            this.CreateAccountBtn.Name = "CreateAccountBtn";
-            this.CreateAccountBtn.Size = new System.Drawing.Size(75, 23);
-            this.CreateAccountBtn.TabIndex = 1;
-            this.CreateAccountBtn.Text = "Create";
-            this.CreateAccountBtn.UseVisualStyleBackColor = true;
-            this.CreateAccountBtn.Click += new System.EventHandler(this.CreateAccountBtn_Click_1);
             // 
             // AccountsList
             // 
@@ -84,7 +71,6 @@
             this.Name = "AccountsList";
             this.Size = new System.Drawing.Size(442, 271);
             this.Load += new System.EventHandler(this.AccountsList_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,6 +81,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label TitelLB;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button CreateAccountBtn;
     }
 }

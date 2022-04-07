@@ -30,7 +30,6 @@
         {
             this.AddCreditBtn = new System.Windows.Forms.Button();
             this.CreditTextBox = new System.Windows.Forms.TextBox();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AddCreditBtn
@@ -51,21 +50,10 @@
             this.CreditTextBox.Size = new System.Drawing.Size(145, 20);
             this.CreditTextBox.TabIndex = 1;
             // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(19, 22);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(75, 23);
-            this.BackBtn.TabIndex = 2;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
-            // 
             // AddCredits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.CreditTextBox);
             this.Controls.Add(this.AddCreditBtn);
             this.Name = "AddCredits";
@@ -79,6 +67,5 @@
 
         private System.Windows.Forms.Button AddCreditBtn;
         private System.Windows.Forms.TextBox CreditTextBox;
-        private System.Windows.Forms.Button BackBtn;
     }
 }

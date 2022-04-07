@@ -33,6 +33,8 @@
             this.AccountsListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
+            this.CreateAccountBtn = new System.Windows.Forms.Button();
+            this.AccountsListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +58,7 @@
             // 
             // AccountsListPanel
             // 
+            this.AccountsListPanel.Controls.Add(this.CreateAccountBtn);
             this.AccountsListPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.AccountsListPanel.Location = new System.Drawing.Point(22, 87);
             this.AccountsListPanel.Name = "AccountsListPanel";
@@ -85,6 +88,16 @@
             this.UpdateBtn.Visible = false;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
+            // CreateAccountBtn
+            // 
+            this.CreateAccountBtn.Location = new System.Drawing.Point(3, 87);
+            this.CreateAccountBtn.Name = "CreateAccountBtn";
+            this.CreateAccountBtn.Size = new System.Drawing.Size(75, 23);
+            this.CreateAccountBtn.TabIndex = 2;
+            this.CreateAccountBtn.Text = "Create";
+            this.CreateAccountBtn.UseVisualStyleBackColor = true;
+            this.CreateAccountBtn.Click += new System.EventHandler(this.CreateAccountBtn_Click);
+            // 
             // AdminDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +110,7 @@
             this.Name = "AdminDashBoard";
             this.Size = new System.Drawing.Size(368, 285);
             this.Load += new System.EventHandler(this.AdminDashBoard_Load);
+            this.AccountsListPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +123,6 @@
         private System.Windows.Forms.FlowLayoutPanel AccountsListPanel;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Button CreateAccountBtn;
     }
 }

@@ -92,6 +92,12 @@
     <Compile Include="AdminDashBoard.Designer.cs">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="BlockStartUc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BlockStartUc.Designer.cs">
+      <DependentUpon>BlockStartUc.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FreeStartUc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FreeStartUc.Designer.cs">
+      <DependentUpon>FreeStartUc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +163,9 @@
     <EmbeddedResource Include="AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BlockStartUc.resx">
+      <DependentUpon>BlockStartUc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientDashboard.resx">
       <DependentUpon>ClientDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreeStartUc.resx">
+      <DependentUpon>FreeStartUc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
